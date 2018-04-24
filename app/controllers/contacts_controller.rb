@@ -18,7 +18,10 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new contact_params
     if @contact.save
-      redirect_to contacts_path(@project)
+      flash[:notice] = l(:notice_contact_successful_create,
+                         :name => view_context.link_to("#{@contact.name}", contact_path(@project, @contact),
+                                                       :title => @contact.name))
+      redirect_after_create
     else
       render :new
     end
@@ -53,5 +56,13 @@ class ContactsController < ApplicationController
 
   def find_contact
     @contact = Contact.find(params[:id])
+  end
+
+  def redirect_after_create
+    if params[:continue]
+      redirect_to new_contact_path(@project)
+    else
+      redirect_to contacts_path(@project)
+    end
   end
 end
