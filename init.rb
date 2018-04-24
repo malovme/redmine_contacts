@@ -1,7 +1,7 @@
 Redmine::Plugin.register :redmine_contacts do
   name 'Redmine Contacts plugin'
   author 'Michael Malov'
-  description 'This is a plugin for Redmine to add contacts'
+  description 'This is a demo plugin for Redmine to add contacts'
   version '0.0.1'
   url 'https://github.com/malovme/redmine_contacts'
   author_url 'https://github.com/malovme'
