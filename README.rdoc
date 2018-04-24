@@ -32,6 +32,16 @@ https://github.com/malovme/redmine_contacts
 
 == TODO
 
+* Add locales for required languages, only "en" exist now
+
+* Add ability to create custom fileds for contact
+
+* Add query for contacts and ability for search
+
+* Cover with tests
+
+* Test redmine_contacts module permissions
+
 * Contacts and projects relations. Now all projects have all contacts.
   Add ability to share contacts between projects as well as restrict access to contact from external project.
 
