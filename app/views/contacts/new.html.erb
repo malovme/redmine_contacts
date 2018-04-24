@@ -1,0 +1,14 @@
+<%= title l(:label_contact_new) %>
+
+<%= labelled_form_for @contact, :url => contacts_path(@project),
+                      :html => { :id => 'contact-form' } do |f| %>
+  <%= error_messages_for 'contact' %>
+  <div class="box tabular">
+    <div id="all_attributes">
+      <%= render :partial => 'contacts/form', :locals => {:f => f} %>
+    </div>
+  </div>
+
+  <%= submit_tag l(:button_create) %>
+  <%= submit_tag l(:button_create_and_continue), :name => 'continue' %>
+<% end %>
