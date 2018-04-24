@@ -7,6 +7,6 @@ Redmine::Plugin.register :redmine_contacts do
   author_url 'https://github.com/malovme'
 
   # comment following string if you need at your own risk
-  requires_redmine :version_or_higher => '3.4.5' # should work with other versions but tested with redmine-3.4.5 only
+  requires_redmine :version => '3.4.5' # should work with other versions but tested with redmine-3.4.5 only
 
 end
