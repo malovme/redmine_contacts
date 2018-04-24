@@ -1,0 +1,12 @@
+<%= labelled_form_for @contact, :url =>  { action: :update },
+    :html => { :id => 'contact-form' } do |f| %>
+  <%= error_messages_for 'contact' %>
+  <div class="box tabular">
+    <div id="all_attributes">
+      <%= render :partial => 'contacts/form', :locals => {:f => f} %>
+    </div>
+  </div>
+
+  <%= submit_tag l(:button_submit) %>
+  <%= link_to l(:button_cancel), contact_path(@project, @contact)  %>
+<% end %>
