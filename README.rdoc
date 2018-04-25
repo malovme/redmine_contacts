@@ -16,14 +16,14 @@ https://github.com/malovme/redmine_contacts
      git clone git@github.com:malovme/redmine_contacts.git
 
 2. Run plugin migrations
-     bundle exec rake db:migrate_plugins NAME=redmine_contacts RAILS_ENV=production
+     bundle exec rake redmine:plugins:migrate NAME=redmine_contacts RAILS_ENV=production
 
 3. Restart redmine
 
 == Uninstallation
 
 1. Revert plugin migrations
-     bundle exec rake db:migrate_plugins NAME=redmine_contacts VERSION=0 RAILS_ENV=production
+     bundle exec rake redmine:plugins:migrate NAME=redmine_contacts VERSION=0 RAILS_ENV=production
 
 2. Delete plugin sources
      rm -r plugins/redmine_contacts
