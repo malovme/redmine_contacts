@@ -42,7 +42,7 @@ https://github.com/malovme/redmine_contacts
 
 * Test redmine_contacts module permissions
 
-* Contacts and projects relations. Now all projects have all contacts.
+* Contacts and projects relations. Now project has many contacts and contact belongs to project.
   Add ability to share contacts between projects as well as restrict access to contact from external project.
 
 == Questions

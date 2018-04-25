@@ -1,0 +1,1 @@
+require 'redmine_contacts/patches/project_patch'

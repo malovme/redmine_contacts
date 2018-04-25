@@ -13,10 +13,12 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    @contact.project = @project
   end
 
   def create
     @contact = Contact.new contact_params
+    @contact.project = @project
     if @contact.save
       flash[:notice] = l(:notice_contact_successful_create,
                          :name => view_context.link_to("#{@contact.name}", contact_path(@project, @contact),

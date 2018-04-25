@@ -30,5 +30,6 @@ Redmine::Plugin.register :redmine_contacts do
        caption: :contacts_title,
        before: :wiki,
        param: :project_id
-
 end
+
+require 'redmine_contacts'
