@@ -3,8 +3,6 @@ module RedmineContacts
     module ProjectPatch
       def self.included(base)
         base.class_eval do
-          unloadable
-
           has_many :contacts, :dependent => :delete_all
         end
       end

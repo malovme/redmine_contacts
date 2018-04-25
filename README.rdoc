@@ -32,18 +32,28 @@ https://github.com/malovme/redmine_contacts
 
 == TODO
 
-* Add locales for required languages, only "en" exist now
-
-* Add ability to create custom fileds for contact
-
-* Add query for contacts and ability for search
-
 * Cover with tests
 
 * Test redmine_contacts module permissions
 
+* Add locales for required languages, only "en" exist now
+
+* Add ability to add custom fileds for contact
+
+* Add ability to search for contacts search
+
+___
+
 * Contacts and projects relations. Now project has many contacts and contact belongs to project.
   Add ability to share contacts between projects as well as restrict access to contact from external project.
+
+* Add other(api, csv, atom, pdf ...) formats for contacts rendering.
+
+* add queries from sessions, saved queries
+
+* Add pagination (Paginator) for contacts
+
+* more TODOs in source code `grep -rn TODO: plugins/redmine_contacts/`
 
 == Questions
 
@@ -51,7 +61,7 @@ https://github.com/malovme/redmine_contacts
 * Is it fine according rails style guide to use
     match 'projects/:id/hello', :to => 'example#say_hello', :via => 'get'
   for nested routes under redmine core entities?
-
+* Corect way to patch redmine core entities. Why uloadable is used by some redmine developers. Why restart is required in development?
 
 == Faced the problem using this redmine plugin?
 

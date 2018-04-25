@@ -1,10 +1,20 @@
 class ContactsController < ApplicationController
 
+  helper :queries
+  include QueriesHelper
+
+  include ContactQueriesHelper
+
   before_action :find_optional_project
   before_action :find_contact, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contacts = Contact.all
+    retrieve_contact_query
+    if @query.valid?
+      @contacts = @query.contacts
+    else
+      flash.now[:error] = :error_wrong_contact_query
+    end
   end
 
   def show
