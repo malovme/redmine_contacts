@@ -9,6 +9,20 @@ https://github.com/malovme/redmine_contacts
 * MySQL (tested with 5.7)
 * redmine-3.4.5
 
+## Testing
+
+For now Minitest is used for tests as being default way for redmine and rails.
+
+```
+bundle exec rake redmine:plugins:test NAME=redmine_contacts
+```
+
+or
+
+```
+bundle exec rake redmine:plugins:test:units NAME=redmine_contacts
+```
+
 ## Installation
 
 1. Copy plugin sources to <redmine_root>/plugins/redmine_contacts
