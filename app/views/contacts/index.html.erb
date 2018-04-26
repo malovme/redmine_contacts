@@ -1,13 +1,13 @@
 <div class="contextual">
   <% if User.current.allowed_to?(:add_contacts, @project, :global => true) %>
-    <%= link_to l(:label_contact_new), new_contact_path(@project), :class => 'icon icon-add new-issue' %>
+    <%= link_to l(:label_contact_new), new_project_contact_path(@project), :class => 'icon icon-add new-issue' %>
   <% end %>
 </div>
 
 <h2><%= l(:label_contact_plural) %></h2>
 
-<%= form_tag(contacts_path(@project), :method => :get, :id => 'query_form') do %>
-  <%= render :partial => 'queries/query_form' %>
+<%= form_tag(project_contacts_path(@project), :method => :get, :id => 'query_form') do %>
+  <%= render :partial => 'contact_query_form' %>
 <% end %>
 
 <% if @query.valid? %>
@@ -15,6 +15,6 @@
     <p class="nodata"><%= l(:label_no_data) %></p>
   <% else %>
     <%= render :partial => 'contacts/list', :locals => { contacts: @contacts, query: @query } %>
-    <span class="pagination"><%# pagination_links_full @issue_pages, @issue_count %></span>
+    <span class="pagination"><%# TODO:pagination pagination_links_full @issue_pages, @issue_count %></span>
   <% end %>
 <% end %>

@@ -1,8 +1,8 @@
 <%= title l(:label_contact_new) %>
 
-<%= labelled_form_for @contact, :url => contacts_path(@project),
-                      :html => { :id => 'contact-form' } do |f| %>
+<%= labelled_form_for [@project, @contact], :html => { :id => 'contact-form' } do |f| %>
   <%= error_messages_for 'contact' %>
+
   <div class="box tabular">
     <div id="all_attributes">
       <%= render :partial => 'contacts/form', :locals => {:f => f} %>

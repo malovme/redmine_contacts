@@ -46,8 +46,10 @@ ___
 * Contacts and projects relations. Now project has many contacts and contact belongs to project.
   Add ability to share contacts between projects as well as restrict access to contact from external project.
 * Add other(api, csv, atom, pdf ...) formats for contacts rendering.
-* add queries from sessions, saved queries
+* add queries from sessions, saved/editable queries,
+  remove code duplication in _contact_query_form.html.erb(queries/query_form)
 * Add pagination (Paginator) for contacts
+* Add "New contact" to project "+" menu
 * more TODOs in source code  
   `grep -rn TODO: plugins/redmine_contacts/`
 

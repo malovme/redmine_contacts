@@ -5,15 +5,13 @@ class ContactsController < ApplicationController
 
   include ContactQueriesHelper
 
-  before_action :find_optional_project
-  before_action :find_contact, only: [:show, :edit, :update, :destroy]
+  before_action :find_optional_project, only: [:index, :new, :create]
+  before_action :find_contact_and_project, only: [:show, :edit, :update, :destroy]
 
   def index
     retrieve_contact_query
     if @query.valid?
       @contacts = @query.contacts
-    else
-      flash.now[:error] = :error_wrong_contact_query
     end
   end
 
@@ -31,8 +29,7 @@ class ContactsController < ApplicationController
     @contact.project = @project
     if @contact.save
       flash[:notice] = l(:notice_contact_successful_create,
-                         :name => view_context.link_to("#{@contact.name}", contact_path(@project, @contact),
-                                                       :title => @contact.name))
+                         name: view_context.link_to("#{@contact.name}", contact_path(@contact), title: @contact.name))
       redirect_after_create
     else
       render :new
@@ -46,7 +43,7 @@ class ContactsController < ApplicationController
   def update
     if @contact.update_attributes(contact_params)
       flash[:notice] = l(:notice_successful_update)
-      redirect_to contacts_path
+      redirect_to project_contacts_path(@project)
     else
       render :edit
     end
@@ -54,10 +51,10 @@ class ContactsController < ApplicationController
 
   def destroy
     if @contact.delete
-      redirect_to contacts_path
+      redirect_to project_contacts_path(@project)
     else
       #flash[:error] = l(:text_)
-      redirect_to contacts_path
+      redirect_to project_contacts_path(@project)
     end
   end
 
@@ -66,15 +63,16 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:name)
   end
 
-  def find_contact
+  def find_contact_and_project
     @contact = Contact.find(params[:id])
+    @project = @contact.project
   end
 
   def redirect_after_create
     if params[:continue]
-      redirect_to new_contact_path(@project)
+      redirect_to new_project_contact_path(@project)
     else
-      redirect_to contacts_path(@project)
+      redirect_to project_contacts_path(@project)
     end
   end
 end

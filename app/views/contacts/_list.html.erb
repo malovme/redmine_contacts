@@ -13,7 +13,7 @@
       <% query.inline_columns.each do |column| %>
         <%# Move column_content to ContactsHelper or other way to build link for contact 'name' %>
         <%= content_tag('td', column.name == :name ?
-                                  link_to(column_content(column, contact), contact_path(contact.project, contact)) :
+                                  link_to(column_content(column, contact), contact_path(contact)) :
                                   column_content(column, contact), :class => column.css_classes) %>
       <% end %>
     </tr>

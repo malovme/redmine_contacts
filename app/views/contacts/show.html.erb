@@ -1,6 +1,6 @@
 <div class="contextual">
-  <%= link_to l(:button_edit), edit_contact_path(@project, @contact), :class => 'icon icon-edit' %>
-  <%= link_to l(:button_delete), contact_path(@project, @contact),
+  <%= link_to l(:button_edit), edit_contact_path(@contact), :class => 'icon icon-edit' %>
+  <%= link_to l(:button_delete), contact_path(@contact),
               :data => {:confirm => contact_destroy_confirmation_message}, :method => :delete, :class => 'icon icon-del' %>
 </div>
 

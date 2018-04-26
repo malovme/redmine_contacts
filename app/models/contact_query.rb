@@ -14,6 +14,14 @@ class ContactQuery < Query
     self.filters ||= {}
   end
 
+  #def new_record?
+  #  false # TODO: add ability to save queries
+  #end
+
+  #def editable_by?(user)
+  #  false # TODO: make contact queries editable
+  #end
+
   def initialize_available_filters
     #add_available_filter "id", :type => :integer
     add_available_filter "id", :type => :integer, :label => :label_contact
