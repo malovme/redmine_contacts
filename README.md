@@ -21,6 +21,7 @@ or
 
 ```
 bundle exec rake redmine:plugins:test:units NAME=redmine_contacts
+bundle exec rake redmine:plugins:test:functionals NAME=redmine_contacts
 ```
 
 ## Installation
