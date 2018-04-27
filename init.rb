@@ -10,18 +10,17 @@ Redmine::Plugin.register :redmine_contacts do
   requires_redmine :version => '3.4.5' # should work with other versions but tested with redmine-3.4.5 only
 
   project_module :redmine_contacts do
-    # Is it correct to include previous permissions in next one?
     permission :view_contacts, {
       contacts: [:index, :show]
     }
     permission :add_contacts, {
-      contacts: [:index, :show, :new, :create]
+      contacts: [:new, :create]
     }
     permission :edit_contacts, {
-        contacts: [:index, :show, :new, :create, :edit, :update]
+        contacts: [:edit, :update]
     }
     permission :destroy_contacts, {
-        contacts: [:index, :show, :new, :create, :edit, :update, :destroy]
+        contacts: [:destroy]
     }
   end
 
@@ -31,5 +30,6 @@ Redmine::Plugin.register :redmine_contacts do
        caption: :contacts_title,
        before: :wiki,
        param: :project_id
-
 end
+
+require 'redmine_contacts'

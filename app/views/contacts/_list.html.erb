@@ -2,16 +2,20 @@
 <table class="list issues odd-even">
   <thead>
     <tr>
-      <th><%= l(:label_contact_name) %></th>
+      <% query.inline_columns.each do |column| %> <%# TODO: avoid calling query method from view %>
+        <%= column_header(query, column) %>
+      <% end %>
     </tr>
   </thead>
   <tbody>
   <% contacts.each do |contact| %>
-    <tr class="<%= cycle('odd', 'even') %>">
-      <td>
-        <%= link_to contact.name, contact_path(@project, contact) %>
-        <%=  %>
-      </td>
+    <tr id="contact-<%= contact.id %>" class="<%= cycle('odd', 'even') %>">
+      <% query.inline_columns.each do |column| %>
+        <%# Move column_content to ContactsHelper or other way to build link for contact 'name' %>
+        <%= content_tag('td', column.name == :name ?
+                                  link_to(column_content(column, contact), contact_path(contact)) :
+                                  column_content(column, contact), :class => column.css_classes) %>
+      <% end %>
     </tr>
   <% end %>
   </tbody>

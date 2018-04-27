@@ -2,8 +2,9 @@
 en:
   project_module_redmine_contacts: Contacts
   contacts_title: Contacts
+  label_contact: Contact
   label_contact_plural: Contacts
   label_contact_new: New contact
-  label_contact_name: Name
+  #label_contact_name: Name
   text_contact_destroy_confirmation: Are you sure you want to delete the selected contact?
   notice_contact_successful_create: "Contact %{name} created."
