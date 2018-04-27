@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
 
   before_action :find_optional_project, only: [:index, :new, :create]
   before_action :find_contact_and_project, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   def index
     retrieve_contact_query
