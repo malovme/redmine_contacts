@@ -1,25 +1,25 @@
 john:
   id: 1
-  project: projects_001
+  project_id: 1
   name: John
 
 
 jordin:
   id: 2
-  project: projects_001
+  project_id: 1
   name: Jordin
 
 andrew:
   id: 3
-  project: projects_001
+  project_id: 1
   name: Andrew
 
 barbara:
   id: 4
-  project: projects_001
+  project_id: 1
   name: Barbara
 
 cara:
   id: 5
-  project: projects_001
+  project_id: 1
   name: Cara
