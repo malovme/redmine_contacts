@@ -51,7 +51,7 @@ bundle exec rake redmine:plugins:test:functionals NAME=redmine_contacts
 
 ## TODO
 
-* Cover with tests (minitest to follow redmine and rails default, then replace with rspec)
+* Add integrational tests, replace minitest with rspec
 * Test redmine_contacts module permissions
 * Add locales for required languages, only "en" exist now
 * Add ability to add custom fileds for contact
