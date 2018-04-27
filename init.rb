@@ -33,3 +33,5 @@ Redmine::Plugin.register :redmine_contacts do
 end
 
 require 'redmine_contacts'
+
+Redmine::Search.available_search_types << 'contacts'
